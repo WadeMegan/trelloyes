@@ -1,9 +1,9 @@
-import React,{Component} from 'react';
+import React,{Component} from 'react'; //whats the component
 import List from './List';
 import './App.css'
 
 class App extends Component {
-  static defaultProps = {
+  static defaultProps = { //what's going on here //static is variable type
     store: {
       lists: [],
       allCards: {},
@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   render() {
-    const { store } = this.props
+    const { store } = this.props  //destructuring //store gets stored in this.props
     return (
       <main className='App'>
         <header className='App-header'>
@@ -22,7 +22,7 @@ class App extends Component {
             <List
               key={list.id}
               header={list.header}
-              cards={list.cardIds.map(id => store.allCards[id])}
+              cards={list.cardIds.map(id => store.allCards[id])} 
             />
           ))}
         </div>
